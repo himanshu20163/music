@@ -12,12 +12,11 @@ import { PlayerContext } from './context/PlayerContext'
 function App() {
   const [count, setCount] = useState(0)
   
-  const {audioref,track} = useContext(PlayerContext)
+  const {audioRef,track} = useContext(PlayerContext);
   console.log('track',track);
   
 
   return (
-    <BrowserRouter>
       <div className='h-screen bg-black'>
         <div className='h-[90%] flex'>
           <Sidebar />
@@ -25,9 +24,8 @@ function App() {
           {/* <Display /> */}
         </div>
         <Player />
-        <audio ref={audioref} src={track.file} preload='auto'></audio>
+        <audio ref={audioRef} src={track.file} preload='auto'></audio>
       </div>
-    </BrowserRouter>
   )
 }
 
